@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkaufswagen - Alpainca</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Weitere Meta-Tags und Stylesheets hier einbinden -->
+</head>
+<body>
+    <header>
+        <!-- Hier könnte der Header-Inhalt, wie Menü und Logo, eingefügt werden -->
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Einkaufswagen</h1>
+            <div id="cart-items">
+                <!-- Hier werden die Produkte im Warenkorb angezeigt -->
+            </div>
+            <button onclick="checkout()">Zur Kasse gehen</button>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Hier könnte der Footer-Inhalt, wie Links zu sozialen Medien und Kontaktinformationen, eingefügt werden -->
+    </footer>
+
+    <!-- JavaScript-Datei einbinden -->
+    <script>
+        // Variable zur Verfolgung der Anzahl der Artikel im Warenkorb
+        let cartItemCount = 0;
+
+        function checkout() {
+            // Hier könntest du den Checkout-Prozess implementieren
+            if (cartItemCount > 0) {
+                // Der Warenkorb ist nicht leer, daher Weiterleitung zur Bezahlseite
+                window.location.href = 'bezahlseite.html';
+            } else {
+                // Der Warenkorb ist leer, daher eine Warnung oder Meldung anzeigen
+                alert('Ihr Warenkorb ist leer. Bitte fügen Sie Produkte hinzu, bevor Sie zur Kasse gehen.');
+            }
+        }
+
+        // Statische Daten für den Warenkorb
+        const cartItemsData = [
+            { name: 'Produkt 1', price: '10,00 €' },
+            { name: 'Produkt 2', price: '20,00 €' },
+            { name: 'Produkt 3', price: '15,00 €' }
+        ];
+
+        // Hier werden die Artikel aus den statischen Daten auf der Seite angezeigt
+        const cartItemsDiv = document.getElementById('cart-items');
+        if (cartItemsData.length > 0) {
+            // Anzahl der Artikel im Warenkorb aktualisieren
+            cartItemCount = cartItemsData.length;
+
+            cartItemsData.forEach(item => {
+                // Erstelle ein HTML-Element für jeden Artikel und füge es dem DOM hinzu
+                const itemElement = document.createElement('div');
+                itemElement.innerHTML = `
+                    <p>${item.name} - ${item.price}</p>
+                    <!-- Hier weitere Informationen zum Artikel einfügen -->
+                `;
+                cartItemsDiv.appendChild(itemElement);
+            });
+        } else {
+            // Falls der Warenkorb leer ist
+            cartItemsDiv.textContent = 'Der Warenkorb ist leer.';
+        }
+    </script>
+</body>
+</html>

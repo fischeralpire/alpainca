@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpainca - Südamerikanischer Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /* Hier können Sie Ihre CSS-Stile hinzufügen, falls erforderlich */
+    body {
+        font-family: Arial, sans-serif; /* Ändern Sie die Schriftart */
+        background-image: url('assets/background.jpg'); /* Hintergrundbild */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container2 {
+        max-width: 600px;
+        margin: 150px auto 50px auto; /* 150px oben, 50px unten */
+        background-color: rgba(255, 255, 255, 0.8); /* Hintergrundfarbe mit Transparenz */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+        .container2:hover {
+        transform: translateY(-5px); /* Bewegung um 5px nach oben */
+        transition: transform 0.3s ease; /* Hinzufügen einer sanften Übergangseffekt */
+    }
+   h2 {
+        text-align: center;
+        margin-top: 30px; /* Abstand von 100px setzen */
+        margin-bottom: 30px; /* Abstand von 100px setzen */
+        font-size: 32px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        color: black; /* Label-Farbe in Schwarz */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc; /* Ändern Sie die Rahmenfarbe auf Grau */
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        font-family: Arial, sans-serif; /* Ändern Sie die Schriftart */
+        color: black; /* Textfarbe in Schwarz */
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50; /* Button-Hintergrundfarbe in Grün */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Arial, sans-serif; /* Ändern Sie die Schriftart */
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049; /* Hervorgehobene Button-Farbe in einem dunkleren Grün */
+    }
+
+    /* Stil für den Scroll-to-Top Pfeil */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        background-color: rgba(226, 114, 91, 0.8);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .scroll-to-top:hover {
+        background-color: rgba(226, 114, 91, 1);
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <script src="menu.js"></script>
+    </header>
+
+<main>
+    <div class="container2">
+        <div id="confirmation" style="display: none; color: green; margin-bottom: 20px;">
+            Ihre Nachricht wurde erfolgreich weitergeleitet.
+        </div>
+        <h2>Kontaktformular</h2>
+        <form id="contactForm" action="contact_form.php" method="POST">
+            <div class="form-group">
+                <label for="email">E-Mail-Adresse:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Handynummer:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <input type="submit" value="Senden" style="background-color: #4CAF50; color: white;"> <!-- Hintergrundfarbe des Buttons ändern -->
+        </form>
+    </div>
+</main>
+
+<footer>
+    <script src="footer.js"></script>
+    <script src="cart.js"></script>
+</footer>
+
+<a href="#" class="scroll-to-top" onclick="scrollToTop()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+        <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0"/>
+    </svg>
+</a>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Standard-Formularverhalten unterdrücken
+
+        // Hier können Sie den Code einfügen, um die Formulardaten zu verarbeiten und an die E-Mail zu senden
+        
+        // FormData-Objekt erstellen, um die Formulardaten zu erfassen
+        var formData = new FormData(document.getElementById("contactForm"));
+
+        // AJAX-Anfrage erstellen
+        var xhr = new XMLHttpRequest();
+
+        // AJAX-Anfrage konfigurieren
+        xhr.open("POST", "contact_form.php", true);
+
+        // AJAX-Ereignislistener hinzufügen
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Erfolgreiche Antwort vom Server
+                // Hier können Sie die Bestätigungsnachricht anzeigen oder andere Aktionen ausführen
+                document.getElementById("contactForm").reset(); // Formular zurücksetzen
+                document.getElementById("confirmation").style.display = "block"; // Bestätigungsnachricht anzeigen
+            } else {
+                // Fehler beim Senden des Formulars
+                console.error("Fehler beim Senden des Formulars: " + xhr.statusText);
+                // Hier können Sie eine Fehlermeldung anzeigen oder andere Fehlerbehandlungen durchführen
+            }
+        };
+
+        // AJAX-Anfrage senden
+        xhr.send(formData);
+    });
+</script>
+</body>
+</html>

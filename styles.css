@@ -1,0 +1,358 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    position: fixed; /* Fixieren Sie das Header-Element */
+    top: 0;
+    width: 100%;
+    background-color: rgba(226, 114, 91, 0.8);
+    color: white;
+    padding: 5px 0 10px 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Grundstil für das Menü */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Entferne den Abstand für das letzte Listenelement */
+}
+
+nav ul li a {
+    color: #444;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Füge einen Übergang für Hover-Effekte hinzu */
+}
+
+/* Hover-Effekte */
+nav ul li a:hover {
+    background-color: #E2725B; /* Ändere die Hintergrundfarbe bei Hover */
+    color: white; /* Ändere die Textfarbe bei Hover */
+}
+
+/* Aktives Menüelement */
+nav ul li a.active {
+    background-color: #E2725B;
+    color: white;
+}
+
+/* Animation für das Erscheinen des Menüs */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    animation: fadeIn 0.5s ease; /* Füge die Animation auf das Menü hinzu */
+}
+
+.logo img {
+    width: 90px;
+    height: auto;
+}
+/* Anpassung des Menüs für mobile Geräte (Handys) */
+@media screen and (max-width: 768px) {
+    /* Hier können Sie alle Styles für das Burger-Menü definieren */
+/* Ergänzungen für das Burger-Menü */
+.burger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100; /* Stellen Sie sicher, dass das Burger-Menü über dem Header liegt */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+.burger {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+    /* Zum Beispiel: */
+    .burger-menu {
+        display: flex; /* Das Burger-Menü wird auf Handys angezeigt */
+    }
+
+    /* Zusätzlich können Sie sicherstellen, dass das Hauptmenü ausgeblendet wird */
+    .nav-links {
+        display: none; /* Das Hauptmenü wird auf Handys ausgeblendet */
+    }
+}
+
+
+/* Animation für das Burger-Menü */
+.burger-menu.active .burger:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.burger-menu.active .burger:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Anpassung des Menüs für mobile Geräte */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 0; /* Höhe des Headers erhöhen, um Platz für das Burger-Menü zu schaffen */
+    }
+
+    .logo {
+        position: static; /* Ändert die Positionierung auf den Standardwert für das Logo */
+        margin: 0 auto; /* Zentriert das Logo horizontal */
+        text-align: center; /* Zentriert den Text im Logo (falls erforderlich) */
+    }
+
+    .nav-links {
+        position: fixed; /* Fixieren Sie das Burger-Menü oben */
+        top: 0; /* Positionieren Sie es am oberen Bildschirmrand */
+        left: 0;
+        width: 100%;
+        background-color: rgba(226, 114, 91, 0.8); /* Hintergrundfarbe mit Transparenz */
+        z-index: 999; /* Stellen Sie sicher, dass das Menü über anderen Inhalten liegt */
+        padding-top: 70px; /* Berücksichtigen Sie die Höhe des Headers */
+        display: none; /* Das Menü wird standardmäßig ausgeblendet */
+    }
+
+    .nav-links.active {
+        display: flex; /* Zeigen Sie das Menü an, wenn die Klasse aktiv ist */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+}
+
+
+.shopping-cart {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    transform: translateY(15%);
+}
+
+.shopping-cart svg {
+    width: 30px;
+    height: auto;
+}
+
+.shopping-cart svg path {
+    stroke-width: 0.75px;
+    stroke: black;
+}
+
+.shopping-cart svg path:hover {
+    stroke: #ffffff;
+}
+.hopping-badge {
+    position: relative;
+    left: 14px;
+    top: -10px;
+    font-weight: bold;
+    background-color: black;
+}
+@media screen and (max-width: 768px) {
+    /* Positionierung für kleinere Bildschirme (mittig) */
+    .logo {
+        position: static; /* Ändert die Positionierung auf den Standardwert für das Logo */
+        margin: 0 auto; /* Zentriert das Logo horizontal */
+        text-align: center; /* Zentriert den Text im Logo (falls erforderlich) */
+    }
+
+    /* Burgermenü */
+    .nav-links {
+        position: fixed; /* Fixieren Sie das Burger-Menü oben */
+        top: 0; /* Positionieren Sie es am oberen Bildschirmrand */
+        left: 0;
+        width: 100%;
+        background-color: rgba(226, 114, 91, 0.8); /* Hintergrundfarbe mit Transparenz */
+        z-index: 999; /* Stellen Sie sicher, dass das Menü über anderen Inhalten liegt */
+        padding-top: 70px; /* Berücksichtigen Sie die Höhe des Headers */
+        display: none; /* Das Menü wird standardmäßig ausgeblendet */
+    }
+
+    .nav-links.active {
+        display: flex; /* Zeigen Sie das Menü an, wenn die Klasse aktiv ist */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+}
+.welcome-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.welcome-section img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.welcome-text h1 {
+    font-size: 68px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text p {
+    font-size: 18px;
+    color: #E8D7A6;
+}
+
+.about-us-title h2 {
+    font-size: 68px;
+    background: linear-gradient(to right, #E2725B, #007B99, #FFD166, #5B9279, #E8D7A6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.about-us-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-us-image {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.about-us-image img {
+    width: 100%;
+    height: auto;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 90px;
+}
+
+.shopping-cart .badge {
+    position: relative;
+    left: 14px;
+    top: -10px;
+    font-weight: bold;
+    background-color: black;
+}
+ footer {
+        background-color: #000; /* Schwarz für den Haupt-Hintergrund */
+        color: #fff; /* Weiß für den Text */
+        padding: 50px 0; /* Innenabstand oben und unten */
+    }
+
+    footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    footer ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    footer ul li {
+        margin-bottom: 10px;
+    }
+
+    footer ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease; /* Sanfter Farbübergang bei Hover */
+    }
+
+    footer ul li a:hover {
+        color: #E2725B; /* Ändern Sie die Farbe beim Überfahren */
+    }
+
+    footer p {
+        margin-top: 20px;
+    }
